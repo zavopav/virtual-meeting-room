@@ -1,13 +1,12 @@
-package com.zonelab.wbd.chat.controllers;
+package com.zonelab.vmr.chat.controllers;
 
-import com.zonelab.wbd.chat.domain.Message;
-import com.zonelab.wbd.chat.domain.MessageRepository;
+import com.zonelab.vmr.chat.domain.Message;
+import com.zonelab.vmr.chat.domain.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 

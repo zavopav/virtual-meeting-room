@@ -3,13 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.zonelab.wbd</groupId>
-    <artifactId>wbd-chat</artifactId>
+    <groupId>com.zonelab.vmr</groupId>
+    <artifactId>vmr-chat</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>wbd-chat</name>
-    <description>Whiteboard Chat</description>
+    <name>vmr-chat</name>
+    <description>Chat service</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

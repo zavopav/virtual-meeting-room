@@ -1,4 +1,4 @@
-package com.zonelab.wbd.chat.domain;
+package com.zonelab.vmr.chat.domain;
 
 import com.mongodb.client.result.DeleteResult;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.zonelab.wbd.chat;
+package com.zonelab.vmr.chat;
 
 import com.mongodb.reactivestreams.client.MongoClient;
 import com.mongodb.reactivestreams.client.MongoClients;

@@ -1,4 +1,4 @@
-package com.zonelab.wbd.chat;
+package com.zonelab.vmr.chat;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

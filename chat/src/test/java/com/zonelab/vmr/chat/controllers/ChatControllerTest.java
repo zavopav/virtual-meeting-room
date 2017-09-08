@@ -1,6 +1,6 @@
-package com.zonelab.wbd.chat.controllers;
+package com.zonelab.vmr.chat.controllers;
 
-import com.zonelab.wbd.chat.domain.Chat;
+import com.zonelab.vmr.chat.domain.Chat;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

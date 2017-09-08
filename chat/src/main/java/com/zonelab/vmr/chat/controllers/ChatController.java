@@ -1,7 +1,7 @@
-package com.zonelab.wbd.chat.controllers;
+package com.zonelab.vmr.chat.controllers;
 
-import com.zonelab.wbd.chat.domain.Chat;
-import com.zonelab.wbd.chat.domain.ChatRepository;
+import com.zonelab.vmr.chat.domain.Chat;
+import com.zonelab.vmr.chat.domain.ChatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
