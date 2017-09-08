@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('wbdApp.version.version-directive', [])
+    angular.module('vmrApp.version.version-directive', [])
 
         .directive('appVersion', ['version', function (version) {
             return function (scope, elm, attrs) {

@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('wbdApp.contact', ['ngRoute'])
+    angular.module('vmrApp.contact', ['ngRoute'])
         .config(['$routeProvider', function ($routeProvider) {
             $routeProvider.when('/contact', {
                 templateUrl: 'contact/contact.html'

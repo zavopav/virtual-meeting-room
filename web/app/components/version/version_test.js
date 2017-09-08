@@ -1,8 +1,8 @@
 (function () {
     'use strict';
 
-    describe('wbdApp.version module', function () {
-        beforeEach(module('wbdApp.version'));
+    describe('vmrApp.version module', function () {
+        beforeEach(module('vmrApp.version'));
 
         describe('version service', function () {
             it('should return current version', inject(function (version) {

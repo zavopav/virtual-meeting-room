@@ -1,9 +1,9 @@
 (function () {
     'use strict';
 
-    describe('wbdApp.home module', function () {
+    describe('vmrApp.home module', function () {
 
-        beforeEach(module('wbdApp.home'));
+        beforeEach(module('vmrApp.home'));
 
         describe('home controller', function () {
 

@@ -62,7 +62,7 @@
         msg.val('');
     }
 
-    angular.module('wbdApp.chat', ['ngRoute'])
+    angular.module('vmrApp.chat', ['ngRoute'])
         .config(['$routeProvider', function ($routeProvider) {
             $routeProvider.when('/chat/:chatId', {
                 templateUrl: 'chat/chat.html',

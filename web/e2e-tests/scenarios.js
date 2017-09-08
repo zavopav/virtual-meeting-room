@@ -3,7 +3,7 @@
 
     /* https://github.com/angular/protractor/blob/master/docs/toc.md */
 
-    describe('wbd app', function () {
+    describe('vmr app', function () {
 
 
         it('should automatically redirect to /welcome when location hash/fragment is empty', function () {

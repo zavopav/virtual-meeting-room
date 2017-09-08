@@ -1,8 +1,8 @@
 {
-  "name": "whiteboard",
+  "name": "vmr-web",
   "version": "0.0.1",
-  "description": "Whiteboard App",
-  "homepage": "https://github.com/zavopav/whiteboard",
+  "description": "Virtual meeting room",
+  "homepage": "https://github.com/zavopav/virtual-meeting-room",
   "license": "MIT",
   "private": true,
   "dependencies": {

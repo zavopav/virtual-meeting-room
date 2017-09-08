@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('wbdApp.home', ['ngRoute'])
+    angular.module('vmrApp.home', ['ngRoute'])
 
         .config(['$routeProvider', function ($routeProvider) {
             $routeProvider.when('/home', {

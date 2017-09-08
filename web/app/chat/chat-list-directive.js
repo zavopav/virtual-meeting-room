@@ -23,6 +23,6 @@
         };
     };
 
-    angular.module('wbdApp.chat.chat-list-directive', [])
+    angular.module('vmrApp.chat.chat-list-directive', [])
         .directive('chatList', ['$http', directive]);
 }());

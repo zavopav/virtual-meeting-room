@@ -1,8 +1,8 @@
 (function () {
     'use strict';
 
-    angular.module('wbdApp.version', [
-        'wbdApp.version.interpolate-filter',
-        'wbdApp.version.version-directive'
+    angular.module('vmrApp.version', [
+        'vmrApp.version.interpolate-filter',
+        'vmrApp.version.version-directive'
     ]).value('version', '0.1');
 }());

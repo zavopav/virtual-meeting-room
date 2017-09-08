@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('wbdApp.version.interpolate-filter', [])
+    angular.module('vmrApp.version.interpolate-filter', [])
 
         .filter('interpolate', ['version', function (version) {
             return function (text) {

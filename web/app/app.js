@@ -9,15 +9,15 @@
         $(window).resize();
     });
 
-    angular.module('wbdApp', [
+    angular.module('vmrApp', [
         'ngRoute',
-        'wbdApp.home',
-        'wbdApp.editor',
-        'wbdApp.chat',
-        'wbdApp.chat.chat-list-directive',
-        'wbdApp.about',
-        'wbdApp.contact',
-        'wbdApp.version'
+        'vmrApp.home',
+        'vmrApp.editor',
+        'vmrApp.chat',
+        'vmrApp.chat.chat-list-directive',
+        'vmrApp.about',
+        'vmrApp.contact',
+        'vmrApp.version'
     ]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
         $locationProvider.hashPrefix('!');
         $routeProvider.otherwise({redirectTo: '/home'});

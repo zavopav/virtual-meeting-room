@@ -1,9 +1,9 @@
 (function () {
     'use strict';
 
-    describe('wbdApp.chat module', function () {
+    describe('vmrApp.chat module', function () {
 
-        beforeEach(module('wbdApp.chat'));
+        beforeEach(module('vmrApp.chat'));
 
         describe('chat controller', function () {
 

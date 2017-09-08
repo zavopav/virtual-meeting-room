@@ -3,7 +3,7 @@
     var editorId;
     var editor;
 
-    angular.module('wbdApp.editor', ['ngRoute'])
+    angular.module('vmrApp.editor', ['ngRoute'])
         .config(['$routeProvider', function ($routeProvider) {
             $routeProvider.when('/editor', {
                 templateUrl: 'editor/editor.html',

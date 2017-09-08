@@ -1,9 +1,9 @@
 (function () {
     'use strict';
 
-    describe('wbdApp.editor module', function () {
+    describe('vmrApp.editor module', function () {
 
-        beforeEach(module('wbdApp.editor'));
+        beforeEach(module('vmrApp.editor'));
 
     });
 }());
