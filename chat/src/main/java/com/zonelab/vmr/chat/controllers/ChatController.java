@@ -36,7 +36,12 @@ public class ChatController {
 
     @PostMapping(path = "/create")
     public Mono<Chat> create(@RequestBody Mono<Chat> chat) {
-        return chatRepository.save(chat);
+        return chatRepository.insert(chat);
+    }
+
+    @PostMapping(path = "/update")
+    public Mono<Chat> updateById(@RequestBody Mono<Chat> chat) {
+        return chatRepository.update(chat);
     }
 
     @PostMapping(path = "/delete/{id}")

@@ -3,6 +3,8 @@ package com.zonelab.vmr.chat;
 import com.mongodb.reactivestreams.client.MongoClient;
 import com.mongodb.reactivestreams.client.MongoClients;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
@@ -11,7 +13,6 @@ import org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfigurat
 import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 import org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongoAutoConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.core.env.Environment;
 import org.springframework.data.mongodb.config.AbstractReactiveMongoConfiguration;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import org.springframework.data.mongodb.core.mapping.event.LoggingEventListener;
@@ -22,8 +23,8 @@ import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRep
 @AutoConfigureAfter(EmbeddedMongoAutoConfiguration.class)
 @RequiredArgsConstructor
 public class ChatConfiguration extends AbstractReactiveMongoConfiguration implements CommandLineRunner {
-
-    private final Environment environment;
+    private static final Logger log = LoggerFactory.getLogger(ChatConfiguration.class);
+    private final GlobalProperties properties;
 
     @Bean
     public LoggingEventListener mongoEventListener() {
@@ -33,8 +34,7 @@ public class ChatConfiguration extends AbstractReactiveMongoConfiguration implem
     @Override
     @Bean
     public MongoClient mongoClient() {
-        final int port = environment.getProperty("local.mongo.port", Integer.class, 27017);
-        return MongoClients.create(String.format("mongodb://localhost:%d", port));
+        return MongoClients.create(properties.getDatabaseUrl());
     }
 
     @Bean
@@ -44,7 +44,7 @@ public class ChatConfiguration extends AbstractReactiveMongoConfiguration implem
 
     @Override
     protected String getDatabaseName() {
-        return "chat";
+        return properties.getDatabaseName();
     }
 
     public static void main(String[] args) {
@@ -53,5 +53,6 @@ public class ChatConfiguration extends AbstractReactiveMongoConfiguration implem
 
     @Override
     public void run(String... strings) throws Exception {
+        log.info("Starting with: {}", properties);
     }
 }

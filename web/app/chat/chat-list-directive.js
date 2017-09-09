@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    var chatServiceUrl = 'http://localhost:8080/chat/';
+    var serviceUrl = 'http://localhost:8080/chat/';
 
     var directive = function ($http) {
         return {
@@ -10,7 +10,7 @@
 
             },
             link: function(scope) {
-                $http.get(chatServiceUrl).success(function(data) {
+                $http.get(serviceUrl).success(function(data) {
                     console.log(data);
                     var chatList = $('#chat-list');
                     data.forEach(function(chat) {

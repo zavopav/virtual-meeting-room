@@ -20,16 +20,16 @@ public class ChatWsController {
         this.messageRepository = messageRepository;
     }
 
-    @MessageMapping("/messages")
-    @SendTo("/topic/messages")
-    public List<Message> messages(Message message) {
+    @MessageMapping("/snapshot")
+    @SendTo("/topic/snapshot")
+    public List<Message> snapshot(Message message) {
         return messageRepository.findByChatId(message.getChatId()).collectList().block();
     }
 
-    @MessageMapping("/add")
-    @SendTo("/topic/add")
-    public Message add(Message message) {
+    @MessageMapping("/update")
+    @SendTo("/topic/update")
+    public Message update(Message message) {
         message.setTimestamp(System.currentTimeMillis());
-        return messageRepository.save(message).block();
+        return messageRepository.insert(message).block();
     }
 }

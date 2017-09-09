@@ -1,7 +1,7 @@
 (function () {
     'use strict';
-    var chatServiceUrl = 'http://localhost:8080/chat/';
-    var chatWsServiceUrl = 'http://localhost:8080/chat-ws/';
+    var serviceUrl = 'http://localhost:8080/chat/';
+    var wsServiceUrl = 'http://localhost:8080/chat-ws/';
     var stompClient = null;
     var chatId = null;
 
@@ -9,7 +9,7 @@
         $('#chat-form-msg').prop('disabled', false);
         $('#chat-form-btn').prop('disabled', false);
         // load chat messages
-        stompClient.send('/ws/messages', {}, JSON.stringify({'chatId': chatId}));
+        stompClient.send('/ws/snapshot', {}, JSON.stringify({'chatId': chatId}));
     }
 
     function onDisconnected() {
@@ -23,14 +23,14 @@
 
     function connect() {
         if (stompClient === null) {
-            var socket = new SockJS(chatWsServiceUrl);
+            var socket = new SockJS(wsServiceUrl);
             stompClient = Stomp.over(socket);
             stompClient.connect({}, function (frame) {
                 console.log('Connected: ' + frame);
-                stompClient.subscribe('/topic/messages', function (data) {
+                stompClient.subscribe('/topic/snapshot', function (data) {
                     JSON.parse(data.body).forEach(onMessage);
                 });
-                stompClient.subscribe('/topic/add', function (data) {
+                stompClient.subscribe('/topic/update', function (data) {
                     onMessage(JSON.parse(data.body));
                 });
                 onConnected();
@@ -54,7 +54,7 @@
 
     function send() {
         var msg = $('#chat-form-msg');
-        stompClient.send('/ws/add', {}, JSON.stringify({
+        stompClient.send('/ws/update', {}, JSON.stringify({
             'chatId': chatId,
             'content': msg.val(),
             'author': 'Pavel'
@@ -72,7 +72,7 @@
         .controller('ChatCtrl', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
             chatId = $routeParams.chatId;
             connect();
-            $http.get(chatServiceUrl + chatId).success(function (data) {
+            $http.get(serviceUrl + chatId).success(function (data) {
                 $('#chat-name').text(data.name);
             });
             $('#chat-form').on('submit', function (e) {

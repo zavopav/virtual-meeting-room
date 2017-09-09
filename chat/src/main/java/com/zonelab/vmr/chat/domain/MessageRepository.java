@@ -24,7 +24,7 @@ public class MessageRepository {
         return template.find(query(where("chatId").is(chatId)), Message.class);
     }
 
-    public Mono<Message> save(Message message) {
+    public Mono<Message> insert(Message message) {
         return template.insert(message);
     }
 

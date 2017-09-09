@@ -27,8 +27,12 @@ public class ChatRepository {
         return template.findAll(Chat.class);
     }
 
-    public Mono<Chat> save(Mono<Chat> chat) {
+    public Mono<Chat> insert(Mono<Chat> chat) {
         return template.insert(chat);
+    }
+
+    public Mono<Chat> update(Mono<Chat> chat) {
+        return template.save(chat);
     }
 
     public Mono<DeleteResult> deleteById(String id) {
