@@ -1,0 +1,28 @@
+{
+    "Chat": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "RoomName": {"S": "Public"},
+                    "Name": {"S": "Music"}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "RoomName": {"S": "Public"},
+                    "Name": {"S": "Video"}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "RoomName": {"S": "Private"},
+                    "Name": {"S": "Games"}
+                }
+            }
+        }
+    ]
+}

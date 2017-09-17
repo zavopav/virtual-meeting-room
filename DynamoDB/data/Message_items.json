@@ -1,0 +1,34 @@
+{
+    "Message": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "ChatId": {"S": "Public#Music"},
+                    "Id": {"S": "1"},
+                    "Content": {"S": "Hi, This is a first message here."},
+                    "Author": {"S": "Pavel"}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "ChatId": {"S": "Public#Music"},
+                    "Id": {"S": "2"},
+                    "Content": {"S": "Anybody here?"},
+                    "Author": {"S": "Pavel"}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "ChatId": {"S": "Public#Video"},
+                    "Id": {"S": "1"},
+                    "Content": {"S": "I like It."},
+                    "Author": {"S": "Pavel"}
+                }
+            }
+        }
+    ]
+}

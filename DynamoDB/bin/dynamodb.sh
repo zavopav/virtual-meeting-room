@@ -1,10 +1,9 @@
 #!/bin/sh
 
-dynamodb=DynamoDBLocal.jar
-dynamodb_data=./data
-dynamodb_log=./dynamodb.log
-prog=dynamodb.sh
-pid=./pid
+dynamodb_home=..
+dynamodb_data=${dynamodb_home}/data
+dynamodb_log=${dynamodb_home}/logs/dynamodb.log
+pid=${dynamodb_home}/logs/pid
 RETVAL=0
 
 stop() {
@@ -23,7 +22,7 @@ start() {
     then
 	echo "DynamoDB is already running."
     else
-	nohup java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb -dbPath ${dynamodb_data} </dev/null >${dynamodb_log} 2>&1 &
+	nohup java -Djava.library.path=${dynamodb_home}/DynamoDBLocal_lib -jar ${dynamodb_home}/DynamoDBLocal.jar -sharedDb -dbPath ${dynamodb_data} </dev/null >${dynamodb_log} 2>&1 &
 	echo $! > ${pid}
 	echo "Started DynamoDB."
 	RETVAL=$?
@@ -42,7 +41,7 @@ case "$1" in
 	start
 	;;
     *)
-	echo $"Usage: ${prog} {start|stop|restart}"
+	echo $"Usage: dynamodb.sh {start|stop|restart}"
 	exit 1
 esac
 

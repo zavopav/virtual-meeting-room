@@ -18,7 +18,9 @@ import javax.validation.constraints.NotNull;
 public class GlobalProperties {
     private boolean debug;
     @NotNull
-    private String databaseUrl;
+    private String dynamodbEndpoint;
     @NotNull
-    private String databaseName;
+    private String dynamodbRegion;
+    @NotNull
+    private String awsProfile;
 }
