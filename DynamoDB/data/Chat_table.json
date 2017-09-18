@@ -1,0 +1,27 @@
+{
+	"TableName": "Chat",
+	"AttributeDefinitions": [
+		{
+			"AttributeName": "RoomName",
+			"AttributeType": "S"
+		},
+		{
+			"AttributeName": "Name",
+			"AttributeType": "S"
+		}
+	],
+	"KeySchema": [
+		{
+			"KeyType": "HASH",
+			"AttributeName": "RoomName"
+		},
+		{
+			"KeyType": "RANGE",
+			"AttributeName": "Name"
+		}
+	],
+	"ProvisionedThroughput": {
+		"WriteCapacityUnits": 5,
+		"ReadCapacityUnits": 5
+	}
+}

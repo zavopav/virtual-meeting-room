@@ -41,7 +41,7 @@ case "$1" in
 	start
 	;;
     *)
-	echo $"Usage: dynamodb.sh {start|stop|restart}"
+	echo "Usage: dynamodb.sh {start|stop|restart}"
 	exit 1
 esac
 
