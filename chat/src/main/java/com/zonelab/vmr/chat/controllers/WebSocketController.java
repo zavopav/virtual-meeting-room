@@ -12,11 +12,11 @@ import java.util.List;
 
 @Controller
 @CrossOrigin
-public class ChatWsController {
+public class WebSocketController {
     private final MessageRepository messageRepository;
 
     @Autowired
-    public ChatWsController(MessageRepository messageRepository) {
+    public WebSocketController(MessageRepository messageRepository) {
         this.messageRepository = messageRepository;
     }
 

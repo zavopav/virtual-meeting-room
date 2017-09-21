@@ -15,7 +15,7 @@ import javax.validation.constraints.NotNull;
 @Getter
 @Setter
 @ToString
-public class GlobalProperties {
+public class ApplicationProperties {
     private boolean debug;
     @NotNull
     private String dynamodbEndpoint;

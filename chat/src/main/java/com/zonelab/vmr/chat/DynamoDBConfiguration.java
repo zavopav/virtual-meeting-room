@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 @EnableDynamoDBRepositories(basePackages = "com.zonelab.vmr.chat.repository")
 @RequiredArgsConstructor
 public class DynamoDBConfiguration {
-    private final GlobalProperties properties;
+    private final ApplicationProperties properties;
 
     @Bean
     public AmazonDynamoDB amazonDynamoDB(final AWSCredentialsProvider credentialsProvider, final EndpointConfiguration dynamoDBEndpoint) {
