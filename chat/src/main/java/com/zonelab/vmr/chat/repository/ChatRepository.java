@@ -7,5 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 
 @EnableScan
 public interface ChatRepository extends CrudRepository<Chat, ChatId>{
-
+    Iterable<Chat> findByRoomName(String roomName);
 }

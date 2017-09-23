@@ -43,4 +43,11 @@ public class ChatId implements Serializable {
         }
         return chatId;
     }
+
+    public static ChatId of(final String roomName, final String name) {
+        final ChatId chatId = new ChatId();
+        chatId.setRoomName(roomName);
+        chatId.setName(name);
+        return chatId;
+    }
 }

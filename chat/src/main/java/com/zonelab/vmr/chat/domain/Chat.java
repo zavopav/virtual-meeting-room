@@ -11,6 +11,8 @@ import org.springframework.data.annotation.Id;
 public class Chat {
     @Id
     private ChatId chatId;
+    private ChatType chatType = ChatType.PUBLIC;
+    private String owner;
 
     @DynamoDBHashKey(attributeName = "RoomName")
     public String getRoomName() {
@@ -34,5 +36,9 @@ public class Chat {
             chatId = new ChatId();
         }
         this.chatId.setName(name);
+    }
+
+    public boolean isPublic() {
+        return chatType == ChatType.PUBLIC;
     }
 }

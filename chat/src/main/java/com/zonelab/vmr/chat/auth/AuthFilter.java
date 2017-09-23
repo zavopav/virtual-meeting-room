@@ -13,20 +13,18 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @Component
-public class RequestFilter implements Filter {
+public class AuthFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-
     }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         if (request instanceof HttpServletRequest) {
             final HttpSession session = ((HttpServletRequest) request).getSession(true);
-            SessionContext ctx = (SessionContext) session.getAttribute(SessionContext.ATTRIBUTE_NAME);
+            final AuthContext ctx = (AuthContext) session.getAttribute(AuthContext.SESSION_ATTRIBUTE);
             if (ctx == null) {
-                ctx = SessionContext.GUEST;
-                session.setAttribute(SessionContext.ATTRIBUTE_NAME, ctx);
+                session.setAttribute(AuthContext.SESSION_ATTRIBUTE, AuthContext.GUEST);
             }
         }
         chain.doFilter(request, response);
@@ -34,6 +32,5 @@ public class RequestFilter implements Filter {
 
     @Override
     public void destroy() {
-
     }
 }
