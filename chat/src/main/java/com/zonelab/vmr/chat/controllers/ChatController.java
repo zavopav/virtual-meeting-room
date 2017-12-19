@@ -104,12 +104,10 @@ public class ChatController {
         return Response.success(chatRepository.save(chat));
     }
 
-    @PostMapping(path = "/delete/{roomName}/{chatName}")
+    @PostMapping(path = "/delete")
     public Response deleteById(
             @SessionAttribute(AuthContext.SESSION_ATTRIBUTE) AuthContext ctx,
-            @PathVariable("roomName") String roomName,
-            @PathVariable("chatName") String name) {
-        final ChatId chatId = ChatId.of(roomName, name);
+            @RequestBody ChatId chatId) {
         log.info("{}: deleteById('{}')", ctx, chatId);
         final Chat chat = chatRepository.findOne(chatId);
         if (chat == null) {

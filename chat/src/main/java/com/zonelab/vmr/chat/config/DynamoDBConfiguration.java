@@ -1,10 +1,11 @@
-package com.zonelab.vmr.chat;
+package com.zonelab.vmr.chat.config;
 
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.client.builder.AwsClientBuilder.EndpointConfiguration;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
+import com.zonelab.vmr.chat.ApplicationProperties;
 import lombok.RequiredArgsConstructor;
 import org.socialsignin.spring.data.dynamodb.repository.config.EnableDynamoDBRepositories;
 import org.springframework.context.annotation.Bean;

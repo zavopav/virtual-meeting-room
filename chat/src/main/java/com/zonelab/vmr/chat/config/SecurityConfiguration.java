@@ -1,4 +1,4 @@
-package com.zonelab.vmr.chat;
+package com.zonelab.vmr.chat.config;
 
 import com.zonelab.vmr.chat.auth.AuthFilter;
 import org.springframework.beans.factory.annotation.Autowired;

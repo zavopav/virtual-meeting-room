@@ -11,12 +11,12 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages = "com.zonelab.vmr.chat")
 @SpringBootApplication
 @RequiredArgsConstructor
-public class ApplicationConfiguration implements CommandLineRunner {
-    private static final Logger log = LoggerFactory.getLogger(ApplicationConfiguration.class);
+public class Application implements CommandLineRunner {
+    private static final Logger log = LoggerFactory.getLogger(Application.class);
     private final ApplicationProperties properties;
 
     public static void main(String[] args) {
-        SpringApplication.run(ApplicationConfiguration.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
     @Override
